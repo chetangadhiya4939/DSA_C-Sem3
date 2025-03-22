@@ -1,0 +1,5 @@
+isFull();
+//     isEmpty();
+//     pop();
+//     push();
+// }
