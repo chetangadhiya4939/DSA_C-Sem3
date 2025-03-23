@@ -15,6 +15,32 @@ void insertionSort(int arr[], int size){
     }
 }
 
+void bubbleSort(int arr[], int size){
+    int temp;
+    for(int i=0; i<size; i++){
+        for(int j=0; j<size; j++){
+            if(arr[i]<arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+void selectionSort(int arr[], int size){
+//arr[]={3,2,4,55,73,23,895,3245,6807,2378,345,843,68,1,0,-374};
+    for(int i=0; i<size; i++){
+        int swap;
+        for(int j=0; j<size; j++){
+            if(arr[i]<arr[j]){
+                swap = arr[i];
+                arr[i] = arr[j];
+                arr[j] = swap;
+            }
+        }
+    }
+}
 void display(int arr[], int size){
     for (int i = 0; i < size; i++){
         printf("%d ", arr[i]);
@@ -41,10 +67,13 @@ int main() {
     printf("Insertion Sorted Array : ");
     display(arr,size);
 
-    printf("Smallest Number is : %d\n ", arr[0]);
-    printf("Largest Number is : %d\n ", arr[size-1]);
-    printf("Second Smallest Number is : %d\n ", arr[1]);
-    printf("Second Largest Number is : %d\n ", arr[size-2]);
+    bubbleSort(arr,size);
+    printf("Bubble Sorted Array : ");
+    display(arr,size);
+
+    selectionSort(arr,size);
+    printf("Selection Sorted Array : ");
+    display(arr,size);
 
 free (arr);
 return 0;
